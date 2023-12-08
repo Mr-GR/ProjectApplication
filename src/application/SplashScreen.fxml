@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SplashScreenController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../../../Downloads/Blue%20White%20Minimalist%20Simple%20Modern%20%20Creative%20Studio%20Logo.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;">
+         <children>
+            <Text blendMode="DARKEN" fill="MAROON" layoutX="108.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO ROCKET RED AIR ">
+               <font>
+                  <Font name="Times New Roman" size="25.0" />
+               </font>
+            </Text>
+            <Label layoutX="567.0" layoutY="14.0" onMouseClicked="#close_app" text="x">
+               <font>
+                  <Font name="Segoe UI Black" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="46.0">
+               <image>
+                  <Image url="@../Images/Rocket%20RED%20AIR.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</StackPane>
