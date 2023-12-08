@@ -1,5 +1,5 @@
 package application;
 
-public class LoggedInController {
+public class LoginController {
 
 }
