@@ -39,7 +39,7 @@ public class ForgotSecurityController implements Initializable {
 		ReturnLogin.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				LoginMethods.changeScene(event, "Login.fxml", "Coral Blue Air Login");
+				LoginMethods.changeScene(event, "Login.fxml", "Rocket Red Air Login");
 			}
 						
 		});

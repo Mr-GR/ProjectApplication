@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.CreateAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountController">
    <children>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="342.0">
          <image>
-            <Image url="@../../../../../../Downloads/Untitled%20design.png" />
+            <Image url="@../Images/Untitled%20design%20(1).png" />
          </image>
       </ImageView>
       <Label layoutX="53.0" layoutY="19.0" text="First Name">
@@ -70,7 +70,7 @@
       <TextField fx:id="mySSN" alignment="CENTER" layoutX="151.0" layoutY="287.0" promptText="000112222" />
       <TextField fx:id="tf_security" alignment="CENTER" layoutX="151.0" layoutY="362.0" promptText="Security Question" />
       <TextField fx:id="tf_anwser" alignment="CENTER" layoutX="151.0" layoutY="325.0" promptText="Answer" />
-      <Button fx:id="myButton" layoutX="337.0" layoutY="244.0" mnemonicParsing="false" style="-fx-background-color: #338bea;" text="Create Account" />
+      <Button fx:id="myButton" layoutX="337.0" layoutY="244.0" mnemonicParsing="false" style="-fx-background-color: #800000;" text="Create Account" textFill="WHITE" />
       <Label fx:id="CreateAccount" layoutX="330.0" layoutY="214.0" text="Create your Account ">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -79,6 +79,6 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Button fx:id="myButton1" layoutX="471.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #338bea;" text="Login" />
+      <Button fx:id="myButton1" layoutX="471.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #800000;" text="Login" textFill="WHITE" />
    </children>
 </AnchorPane>

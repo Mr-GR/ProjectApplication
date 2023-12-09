@@ -24,7 +24,7 @@ public class HomePortalController implements Initializable {
 		BackToHome.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				//DBUtilites.changeScene(event, "Login.fxml", "Log in!");
+			LoginMethods.changeScene(event, "Login.fxml", "Log in!");
 			}
 		});
 		

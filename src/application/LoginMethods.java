@@ -113,9 +113,10 @@ public class LoginMethods {
 
                 if (!resultSet.isBeforeFirst()) {
                     System.out.println("User not found in the database!");
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("Provided credentials are incorrect! ");
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setContentText("New User! ");
                     alert.show();
+                    LoginMethods.changeScene(event, "CreateAccount.fxml", "Sign IP!");
                 } else {
                     while (resultSet.next()) {
                         String retrievedPassword = resultSet.getString("Password");
@@ -126,6 +127,7 @@ public class LoginMethods {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setContentText("The provided credentials are incorrect!");
                             alert.show();
+                            
                         }
                     }
                 }
@@ -159,11 +161,11 @@ public class LoginMethods {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("Please create a new account!");
                     alert.show();
-                    changeScene(event, "SignUp.fxml", "Coral Blue Air Create Account");
+                    changeScene(event, "CreateAccount.fxml", "Sign Up!");
                 } else {
                     if (resultSet.next()) {
                         String securityQuestion = resultSet.getString("SecurityQuestion");
-                        changeSceneQuestion(event, "SecurityQuestion.fxml", "Security Question", securityQuestion);
+                        changeSceneQuestion(event, "ForgotSecurityQuestion.fxml", "Check Security Question", securityQuestion);
                     }
                 }
             } catch (SQLException e) {
