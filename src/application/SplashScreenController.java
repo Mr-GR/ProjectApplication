@@ -20,7 +20,7 @@ public class SplashScreenController implements Initializable {
     }
 
 		
-		private void showSplashScreen() {
+		/*private void showSplashScreen() {
 	        // Create a label with a loading message
 	        Label loadingLabel = new Label("Loading...");
 
@@ -38,7 +38,7 @@ public class SplashScreenController implements Initializable {
 	            parent.getChildren().remove(loadingLabel);
 	        });
 	        pause.play();
-	    }
+	    }*/
 
 		
 	
