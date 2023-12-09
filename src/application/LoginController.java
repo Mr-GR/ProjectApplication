@@ -29,7 +29,6 @@ public class LoginController implements Initializable {
 	
 	@FXML
 	private TextField tf_password;
-	
 
 
 	@Override
@@ -38,22 +37,25 @@ public class LoginController implements Initializable {
 		LoginButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-	// Will update Method Later Do no not touch			LoginPage.logInUser(event, tf_username.getText(), tf_password.getText());
+			LoginMethods.logInUser(event, tf_username.getText(), tf_password.getText());
 				
 		}
 		});
-		
+	
+	
 		NewUserButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-//Will update Method Later do not touch				DBUtilites.changeScene(event, "SignUp.fxml", "Sign UP!");
+			LoginMethods.changeScene(event, "ForgotScene.fxml", "Sign UP!");
 			}
 		});
+		
+		
 		
 		ForgotButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-// Will update method later do not touch				DBUtilites.changeScene(event, "ForgotPassword.fxml", "Retrive Question");
+		    LoginMethods.changeScene(event, "ForgotScene.fxml", "Retrive Question");
 			}
 		});
 		
