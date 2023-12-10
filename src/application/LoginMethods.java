@@ -207,36 +207,46 @@ public class LoginMethods {
  
 
 // Rertive password method needs to be set on action the the correct security answer will provide the password
-    public static void retrivePassword(ActionEvent event, String tf_securityAnswer) {
+    public static void retrievePassword(ActionEvent event, String tf_securityAnswer) {
     ResultSet resultSet = null;
 
     try {
 
-       String CheckAnwser = "SELECT Password FROM dbo.Users WHERE securityAnswer = ?";
+       String CheckAnwser = "SELECT Password, SecurityAnswer FROM dbo.Users WHERE SecurityAnswer = ?";
 
         try (Connection connection = establishConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(CheckAnwser)) {
+        	
+        	
             preparedStatement.setString(1, tf_securityAnswer);
             resultSet = preparedStatement.executeQuery();
 
-            if (!resultSet.isBeforeFirst()) {
-                System.out.println("Inncorrect Anwser!");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Security Incorrect");
-                alert.setContentText("Security Anwser is incorrect! ");
-                alert.setHeaderText("Security Alert");
-                alert.show();
-                
+            if (resultSet.next()) {
+            	String retrievedPassword = resultSet.getString("Password");
+            	String securityQuestion = resultSet.getString("SecurityAnswer");
+            	
+            	if (tf_securityAnswer.equals(securityQuestion)) {
+            		Alert sucessAlert = new Alert(Alert.AlertType.INFORMATION);
+            		sucessAlert.setTitle("Password retrieval");
+            		sucessAlert.setHeaderText("Password");
+            		sucessAlert.setContentText("Your Password is: " + retrievedPassword);
+            		sucessAlert.show();
+            	} else {
+            		Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            		errorAlert.setTitle("Security Incorrect");
+            		errorAlert.setHeaderText("Security Alert");
+            		errorAlert.setContentText("Security Answer is incorrect!");
+            		errorAlert.show();
+            	}
+       
             } else {
-           	  while (resultSet.next()) {
-                     String retrievedPassword = resultSet.getString("Password");
-                      
-                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                     alert.setTitle("Password Retrieval");
-                     alert.setHeaderText("password");
-                     alert.setContentText("Your password is: " + retrievedPassword);
-                     alert.show();
-                  }
+            	
+            	Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+        		errorAlert.setTitle("FILL INFORMATION");
+        		errorAlert.setHeaderText("Information missing");
+        		errorAlert.setContentText("Please fill out all information!");
+        		errorAlert.show();
+
            	
             }
                     
