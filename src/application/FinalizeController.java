@@ -42,7 +42,7 @@ public class FinalizeController implements Initializable {
 		Return.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				DBUtilites.changeScene(event, "SearchBooked.fxml", "Search for Flights");
+				//DBUtilites.changeScene(event, "SearchBooked.fxml", "Search for Flights");
 			}
 		});
 		
