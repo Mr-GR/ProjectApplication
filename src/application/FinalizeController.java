@@ -49,7 +49,7 @@ public class FinalizeController implements Initializable {
 		ConfirmButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				DBFlight.bookFlight(event, tf_username.getText(), Integer.valueOf(tf_FlightID.getText()));
+				//DBFlight.bookFlight(event, tf_username.getText(), Integer.valueOf(tf_FlightID.getText()));
 			
 			}
 		});

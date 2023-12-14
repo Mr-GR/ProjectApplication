@@ -22,7 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SearchPortalController implements Initializable{
 	@FXML 
-	private TableView<Flight> table; 
+	//private TableView<Flight> table; 
 	
     @FXML
     private TableColumn<Flight, String> ACTable;
