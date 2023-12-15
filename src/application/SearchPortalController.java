@@ -22,7 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SearchPortalController implements Initializable{
 	@FXML 
-	//private TableView<Flight> table; 
+	private TableView<Flight> table; 
 	
     @FXML
     private TableColumn<Flight, String> ACTable;
@@ -89,7 +89,7 @@ public class SearchPortalController implements Initializable{
 		BackToPortal.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				DBUtilites.changeScene(event, "FlightPortal.fxml", "Coral Blue Air Portal");
+				LoginMethods.changeScene(event, "FlightPortal.fxml", "Coral Blue Air Portal");
 			}
 		});
 		
@@ -104,7 +104,7 @@ public class SearchPortalController implements Initializable{
 		Book.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				DBFlight.changeSceneBooking(event, "FinalizeBooking.fxml", "Finalize Booking", TextFlightNo.getText());
+				FlightMethods.changeSceneBooking(event, "FinalizeBooking.fxml", "Finalize Booking", TextFlightNo.getText());
 		}
 			
 		});
@@ -119,7 +119,7 @@ public class SearchPortalController implements Initializable{
 	    String arrivalCity = ArrivalCity.getText();
 
 	    // Perform the search in the database
-	    ObservableList<Flight> searchResults = DBFlight.searchFlights(departureCity, arrivalCity);
+	    ObservableList<Flight> searchResults = FlightMethods.searchFlights(departureCity, arrivalCity);
 
 	    // Set the items to the table
 	    table.setItems(searchResults); 
