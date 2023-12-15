@@ -1,6 +1,8 @@
 package application; 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.collections.ObservableList;
 //import application.gui.DBUtilites;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -32,7 +34,7 @@ public class HomePortalController implements Initializable {
 			
 			@Override
 			public void handle(ActionEvent event) {
-				//DBUtilites.changeScene(event, "SearchBooked.fxml", "Search Flights!");
+				LoginMethods.changeScene(event, "SearchPortal.fxml", "Search Flights!");
 				
 			}
 			
@@ -41,16 +43,11 @@ public class HomePortalController implements Initializable {
 		CheckBooked.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				//DBUtilites.changeScene(event, "CheckBooked.fxml", "Check Your Flights");
+				User user = UserSession.getCurrentUser();
+				FlightMethods.changeSceneCheckBooked(event, "CheckBooked.fxml", "Check Your Flights", user.getUserName());
 			}
 		});
 		
 		
 	}
-
-	public static void setUserInformation(String username, String password) {
-		
-		
-	}
-
 }

@@ -101,7 +101,7 @@ public class LoginMethods {
 
     public static void logInUser(ActionEvent event, String username, String password) {
         ResultSet resultSet = null;
-
+        
         try {
 
             String logInUser = "SELECT Password FROM dbo.Users WHERE Username = ?";
@@ -121,6 +121,12 @@ public class LoginMethods {
                     while (resultSet.next()) {
                         String retrievedPassword = resultSet.getString("Password");
                         if (retrievedPassword.equals(password)) {
+                        	
+                        	User loggedInUser = new User();
+                        	loggedInUser.setUserName(username);
+                        	loggedInUser.setPassword(password);
+                        	
+                        	UserSession.setCurrentUser(loggedInUser);
                             changeScene(event, "HomePortal.fxml", "Rocket Red Air");
                         } else {
                             System.out.println("Passwords did not match!");

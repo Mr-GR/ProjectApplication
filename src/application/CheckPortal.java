@@ -17,13 +17,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import application.User;
 
 
 
 public class CheckPortal implements Initializable {
 
-	@FXML 
-	private TableView<Flight> table; 
+	@FXML TableView<Flight> table; 
 	
     @FXML
     private TableColumn<Flight, String> ACTable;
@@ -68,9 +68,6 @@ public class CheckPortal implements Initializable {
     private Button Cancel;
     
     @FXML
-    private TextField username;
-    
-    @FXML
     private TextField TextFlightNo; 
     
     private ObservableList<Flight> flightList = FXCollections.observableArrayList();
@@ -93,31 +90,18 @@ public class CheckPortal implements Initializable {
 		BackToPortal.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				LoginMethods.changeScene(event, "FlightPortal.fxml", "Coral Blue Air Portal");
+				LoginMethods.changeScene(event, "HomePortal.fxml", "Rocekt Red Air Portal");
 			}
 		});
 		
 		Cancel.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				DBFlight.changeSceneCancel(event, "CancelPortal.fxml", "Confirm Cancelation", TextFlightNo.getText());
+			FlightMethods.changeSceneCancel(event, "CancelPortal.fxml", "Confirm Cancelation", TextFlightNo.getText());
 		}
 			
 		});
 	
-	}
-	
-	@FXML
-	public void handleSearch(ActionEvent event) {
-	    // Get the search parameters from text fields
-	    String Username = username.getText();
-	    
-
-	    // Perform the search in the database
-	    ObservableList<Flight> searchResults = DBFlight.searchUser(Username);
-
-	    // Set the items to the table
-	    table.setItems(searchResults); 
 	}
 	
 }

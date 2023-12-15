@@ -89,14 +89,14 @@ public class SearchPortalController implements Initializable{
 		BackToPortal.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				LoginMethods.changeScene(event, "FlightPortal.fxml", "Coral Blue Air Portal");
+				LoginMethods.changeScene(event, "HomePortal.fxml", "Rocket Red Air Portal");
 			}
 		});
 		
 	//	Search.setOnAction(new EventHandler<ActionEvent>() {
 	//		@Override
 	//		public void handle(ActionEvent event) {
-	//			DBFlight.searchFlights(event, DepartureCity.getText(), ArrivalCity.getText());
+	//			FlightMethods.searchFlights(event, DepartureCity.getText(), ArrivalCity.getText());
 	//		}
 	//	});
 		
@@ -104,7 +104,7 @@ public class SearchPortalController implements Initializable{
 		Book.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				FlightMethods.changeSceneBooking(event, "FinalizeBooking.fxml", "Finalize Booking", TextFlightNo.getText());
+				FlightMethods.changeSceneBooking(event, "Finalize.fxml", "Finalize Booking", TextFlightNo.getText());
 		}
 			
 		});

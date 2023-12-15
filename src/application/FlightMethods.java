@@ -22,6 +22,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+
 public class FlightMethods {
 	
 	public static void showAlert(String title, String header, String content, AlertType alertType) {
@@ -31,6 +32,32 @@ public class FlightMethods {
         alert.setContentText(content);
         alert.showAndWait();
     }	
+	
+    public static void changeSceneCheckBooked(ActionEvent event, String fxmlFile, String title, String userName) {
+
+        Parent root = null;
+
+        try {
+        	
+        	ObservableList<Flight> flightData = FlightMethods.searchUser(userName);
+        	
+        	FXMLLoader loader = new FXMLLoader(FlightMethods.class.getResource(fxmlFile));
+            root = loader.load();
+            
+            CheckPortal controller = loader.getController();
+            
+            controller.table.setItems(flightData);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        System.out.println("Setting scene...");
+        stage.setTitle(title);
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
+        System.out.println("Scene set successfully.");
+    }
 	
 	private static final String URL = "jdbc:sqlserver://applicationprogramming.database.windows.net:1433;database=applicationdb;";
 	
@@ -98,6 +125,7 @@ public class FlightMethods {
 	                preparedStatement.executeUpdate();
 	                System.out.println("Success");
 	                showAlert("Success", "Booking Successful", "You have booked this flight!", AlertType.INFORMATION);
+	                LoginMethods.changeScene(event, "HomePortal.fxml", "Rocket Red Air Home");
 	            }
 	        } catch (SQLException e) {
 	            e.printStackTrace();
@@ -123,6 +151,7 @@ public class FlightMethods {
 
 	                if (rowsAffected > 0) {
 	                    showAlert("Success", "Cancellation Successful", "Flight cancellation successful.", AlertType.INFORMATION);
+	                    LoginMethods.changeScene(event, "HomePortal.fxml", "Rocket Red Air Home");
 	                } else {
 	                    showAlert("Error", "Cancellation Error", "Failed to cancel the flight. Please try again.", AlertType.ERROR);
 	                }
@@ -198,9 +227,9 @@ public class FlightMethods {
 	            FXMLLoader loader = new FXMLLoader();
 	            loader.setLocation(LoginMethods.class.getResource(fxmlFileName));
 	            Parent root = loader.load();
-	            if ("FinalizeBooking.fxml".equals(fxmlFileName)) {
-	  //              FinalizeBookingController controller = loader.getController();
-	      //          controller.displayflightNo(flightNo);
+	            if ("Finalize.fxml".equals(fxmlFileName)) {
+	                FinalizeController controller = loader.getController();
+	                controller.displayflightNo(flightNo);
 	            }
 	            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	            stage.setScene(new Scene(root));
@@ -252,8 +281,8 @@ public class FlightMethods {
 	            loader.setLocation(LoginMethods.class.getResource(fxmlFileName));
 	            Parent root = loader.load();
 	            if ("CancelPortal.fxml".equals(fxmlFileName)) {
-	    //            CancelPortalController controller = loader.getController();
-	        //        controller.displayflightNo(flightNo);
+	                CancelPortalController controller = loader.getController();
+	                controller.displayflightNo(flightNo);
 	            }
 	            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	            stage.setScene(new Scene(root));

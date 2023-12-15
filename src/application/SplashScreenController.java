@@ -18,38 +18,6 @@ public class SplashScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
-
-<<<<<<< HEAD
-		
-		/*private void showSplashScreen() {
-=======
-	/*	
-		private void showSplashScreen() {
->>>>>>> 70cbf1aad024069cd8ba91cdf53145c35a06fa87
-	        // Create a label with a loading message
-	        Label loadingLabel = new Label("Loading...");
-
-	        // Customize the appearance of the label as needed
-	        loadingLabel.setStyle("-fx-font-size: 24; -fx-text-fill: white;");
-
-	        // Add the label to the StackPane
-	        parent.getChildren().add(loadingLabel);
-
-	        // You can implement additional logic such as delays or animations here
-	        // For example, you can use PauseTransition for a delay
-	        PauseTransition pause = new PauseTransition();
-	        pause.setOnFinished(event -> {
-	            // Remove the label when the delay is over
-	            parent.getChildren().remove(loadingLabel);
-	        });
-	        pause.play();
-<<<<<<< HEAD
-	    }*/
-
-=======
-	    }
-*/
->>>>>>> 70cbf1aad024069cd8ba91cdf53145c35a06fa87
 		
 	
 	@FXML
