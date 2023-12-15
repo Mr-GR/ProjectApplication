@@ -120,9 +120,9 @@ public class Flight {
 	public String getTicketPrice() {
 		return TicketPrice;
 	}
-
+      // test 
 	public void setTicketPrice(String ticketPrice) {
 		TicketPrice = ticketPrice;
 	}
 
-}
+} 

@@ -244,7 +244,7 @@ public class FlightMethods {
 
 		}
 		
-	    
+	    // change the scene to cancel
 	    public static void changeSceneCancel(ActionEvent event, String fxmlFileName, String windowTitle,
 	            String flightNo) {
 	        try {
