@@ -20,12 +20,12 @@
                </font>
             </Label>
             <TextField fx:id="tf_username" layoutX="172.0" layoutY="187.0" promptText="username" />
-            <Button fx:id="retrieveQuestion" layoutY="248.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" style="-fx-background-color: #800000;" text="Retrive Question">
+            <Button fx:id="retrieveQuestion" layoutY="248.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="170.0" style="-fx-background-color: #800000;" text="Retrive Question" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button fx:id="ReturnLogin" layoutX="203.0" layoutY="248.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="163.0" style="-fx-background-color: #800000;" text="Return Login">
+            <Button fx:id="ReturnLogin" layoutX="203.0" layoutY="248.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="163.0" style="-fx-background-color: #800000;" text="Return Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

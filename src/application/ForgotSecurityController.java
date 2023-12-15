@@ -39,7 +39,7 @@ public class ForgotSecurityController implements Initializable {
 		ReturnLogin.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				LoginMethods.changeScene(event, "Login.fxml", "Coral Blue Air Login");
+				LoginMethods.changeScene(event, "Login.fxml", "Rocket Red Air Login");
 			}
 						
 		});
@@ -47,7 +47,7 @@ public class ForgotSecurityController implements Initializable {
 		retrievePassword.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				LoginMethods.retrivePassword(event, tf_securityAnswer.getText());
+				LoginMethods.retrievePassword(event, tf_securityAnswer.getText());
 			}
 			
 		}

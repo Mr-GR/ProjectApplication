@@ -46,7 +46,7 @@ public class LoginController implements Initializable {
 		NewUserButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-			LoginMethods.changeScene(event, "ForgotScene.fxml", "Sign UP!");
+			LoginMethods.changeScene(event, "CreateAccount.fxml", "Sign UP!");
 			}
 		});
 		
