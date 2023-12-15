@@ -19,8 +19,13 @@ public class SplashScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }
 
+<<<<<<< HEAD
+		
+		/*private void showSplashScreen() {
+=======
 	/*	
 		private void showSplashScreen() {
+>>>>>>> 70cbf1aad024069cd8ba91cdf53145c35a06fa87
 	        // Create a label with a loading message
 	        Label loadingLabel = new Label("Loading...");
 
@@ -38,8 +43,13 @@ public class SplashScreenController implements Initializable {
 	            parent.getChildren().remove(loadingLabel);
 	        });
 	        pause.play();
+<<<<<<< HEAD
+	    }*/
+
+=======
 	    }
 */
+>>>>>>> 70cbf1aad024069cd8ba91cdf53145c35a06fa87
 		
 	
 	@FXML
