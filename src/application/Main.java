@@ -26,7 +26,6 @@ public class Main extends Application {
         splashStage.initStyle(StageStyle.UNDECORATED);
 
         try {
-           
             FXMLLoader loader = new FXMLLoader(getClass().getResource("SplashScreen.fxml"));
             Parent splashRoot = loader.load();
 

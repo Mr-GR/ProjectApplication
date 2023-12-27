@@ -55,8 +55,16 @@ package application;
 						try {
 							if(!tf_firstname.getText().trim().isEmpty() && !tf_lastname.getText().trim().isEmpty() && !tf_address.getText().trim().isEmpty() && !myZip.getText().trim().isEmpty() && !tf_state.getText().trim().isEmpty() && !tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty() 
 									&& !tf_email.getText().trim().isEmpty() && !mySSN.getText().trim().isEmpty() && !tf_security.getText().trim().isEmpty() && !tf_anwser.getText().trim().isEmpty()) {
+								
 								LoginMethods.insertUser(event, tf_firstname.getText(), tf_lastname.getText(), tf_address.getText(), myZip.getText(), tf_state.getText(), tf_username.getText(), tf_password.getText(), 
 										tf_email.getText(), mySSN.getText(), tf_security.getText(), tf_anwser.getText());
+								
+								System.out.println("Account Created");
+								Alert alert = new Alert(Alert.AlertType.INFORMATION);
+								alert.setContentText("Account Created");
+								alert.show();
+								
+								LoginMethods.changeScene(event, "Login.fxml", "Log In");
 							
 						}else {
 							System.out.println("Please fill in all information!");
